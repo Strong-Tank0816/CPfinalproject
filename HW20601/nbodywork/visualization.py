@@ -23,7 +23,7 @@ def save_movie(fns, lengthscale=1.0, filename='movie.mp4',fps=30):
     fig.set_size_inches(10, 10, forward=True)
     fig.set_dpi(72)
     
-    planets = [ax.plot([], [], '.', color='w', markersize=2)[0] for i in range(9)]
+    planets = [ax.plot([], [], 'o', color='b')[0] for i in range(9)]
     
     def init():
   
@@ -45,7 +45,7 @@ def save_movie(fns, lengthscale=1.0, filename='movie.mp4',fps=30):
         yAU = y/AU
         for i, planet in enumerate(planets):
             planet.set_data(xAU[i], yAU[i])
-        plt.title(f"day {3*frame}", size=18)
+        plt.title(f"day {30*frame}", size=18)
         plt.grid(color = 'w')
         return planets
     
@@ -96,7 +96,7 @@ def save_movie_inner(fns, lengthscale=1.0, filename='movie.mp4', fps=30):
             planet.set_data(xAU[i], yAU[i])
   
         plt.legend(ncols = 1,frameon = True,markerscale = 0.4,fontsize = 15)
-        plt.title(f"day {3*frame}", size=18)
+        plt.title(f"2D model for terrestrial planet:day {3*frame}", size=18)
         plt.grid(color = 'w')
         return planets
 
@@ -197,7 +197,7 @@ def save_movie_outer(fns, lengthscale=1.0, filename='movie.mp4',fps=30):
             planet.set_data(xAU[i], yAU[i])
 
         plt.legend(ncols = 1,frameon = True,markerscale = 0.4,fontsize = 15)
-        plt.title(f"day {3*frame}", size=18)
+        plt.title(f"2D model for Gas Giant:day {3*frame}", size=18)
         plt.grid(color = 'w')
         return planets
 
